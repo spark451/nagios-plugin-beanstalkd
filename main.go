@@ -1,5 +1,14 @@
 package main
 
+/*
+This Plugin takes checks the beanstalk queues at host and compares them to warning and critical values raising warnings
+if these thresholds are violated. They can be set via command line opts for all queues or for specific queues using the
+following syntax
+queue-name=100,500 would set warn to 100 and crit to 500 for queue-name. This must come after all other command line opts
+
+*/
+
+
 import (
 	"fmt"
 	"github.com/iwanbk/gobeanstalk"
