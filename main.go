@@ -82,7 +82,8 @@ func checkQueues()(status int, err error){
 
 	conn, err := gobeanstalk.Dial(*hostPtr + ":" + *portPtr)
 	if err != nil {
-		log.Fatal(err)
+		log(err, "Could not connect")
+		os.Exit(3)
 	}
 
 	defer conn.Quit()
