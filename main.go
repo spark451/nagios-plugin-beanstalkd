@@ -122,22 +122,22 @@ func checkQueues()(status int, err error){
 
 		switch {
 		case tubeStats.CurrentJobsReady < warn[tube]:
-			fmt.Println("OK")
+			fmt.Print(" OK ")
 
 		case tubeStats.CurrentJobsReady < crit[tube]:
-			fmt.Println("warning")
+			fmt.Print(" warning ")
 			if status < 2{
 				status = 1
 			}
 
 
 		case tubeStats.CurrentJobsReady >= crit[tube]:
-			fmt.Print("Critical")
+			fmt.Print(" Critical ")
 			status = 2
 
 		}
 
-		fmt.Println(tubeStats.Name + " Jobs Ready:", tubeStats.CurrentJobsReady)
+		fmt.Print(tubeStats.Name + " Jobs Ready:", tubeStats.CurrentJobsReady, ";;  ")
 
 	}
 
