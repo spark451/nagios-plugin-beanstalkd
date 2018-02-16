@@ -51,8 +51,8 @@ func checkQueues()(status int, err error){
 
 	hostPtr := flag.String("host", "127.0.0.1", "Host or IP of BeanstalkdServer")
 	portPtr := flag.String("port", "11300", "Port of BS Server")
-	warnPtr := flag.Int("warn", 100, "This many queued Jobs is  warning")
-	critPtr := flag.Int("crit", 1000, "This many queued jobs is critical")
+	warnPtr := flag.Int("warn", 500000, "This many queued Jobs is  warning")
+	critPtr := flag.Int("crit", 1000000, "This many queued jobs is critical")
 
 	flag.Parse()
 
